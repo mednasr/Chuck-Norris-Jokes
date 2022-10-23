@@ -1,0 +1,44 @@
+
+$primaryColor: #333333;
+$secondaryColor: #ababab;
+
+.wrapper {
+  header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    h1 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .header-favourite-btn {
+      display: none;
+      cursor: pointer;
+
+      &:hover {
+        text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      @media screen and (max-width: 1199px) {
+        margin-left: auto;
+        display: flex;
+        flex-flow: row nowrap;
+
+        h3 {
+          margin-left: 10px;
+        }
+      }
+
+      h3 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        color: $secondaryColor;
+      }
+    }
+  }}
