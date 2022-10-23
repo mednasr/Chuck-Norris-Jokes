@@ -3,12 +3,21 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import "./assets/style/modifiers.css";
+import "./assets/style/style.scss";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+    <StrictMode>
+        <Provider store={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Provider>
+    </StrictMode>,
+    rootElement
 );
 
 // If you want to start measuring performance in your app, pass a function
