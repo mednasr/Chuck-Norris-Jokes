@@ -1,11 +1,48 @@
-# Getting Started with Create React App
+# Chuck Norris jokes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project, you will be able to get 10 Chuck Norris jokes randomly and then you can either consult the list of your
+favorite jokes or click on the get jokes each 5 sec and you will be able to see new jokes each 5 seconds.
 
-## Available Scripts
+### This is what you will be able to do withen the project :
 
-In the project directory, you can run:
+- Fetch 10 random Chuck Norris jokes from the provided API
+- Show the results in a list.
+- Toggle a timer which will fetch a new joke every 5 seconds. The list of jokes has a max of 10 items. The oldest joke goes off the list then the maximum is reached.
+- The possibility to add and remove jokes as favorite (with a maximum of 10 favorites).
+- Favorites are shown in a list on a separate page.
+- When refreshing the page, favorites stay intact (i.e., use a database or cache).
 
+### Setting up CI/CD using GITLAB
+
+- Create a gitlab account
+- Create an AWS Account
+- Add the .gitlab-ci.yml on project root.
+- Go gitlab project > CI/CD > Environment Variables
+- Create an S3 Bucket
+- Disable public access
+- Create a cloudfront distribution
+- Choose Web
+- Choose the S3 bucket as the Origin domain
+- Origin path should be /latest
+- Restrict Bucket Access select Yes
+- Select Create a New Identity
+- Yes, Update Bucket Policy
+- Default Root Object /index.html
+- Redirect HTTP to HTTPS
+- Lastly you can route the domain to cloudfront using Route53.
+-
+### What can be improved
+
+- Install test library both unit using Jest and component/unit with Cypress tool .
+- Automate linting process using CI/CD pipelines
+- Improve UI/UX
+
+# Run the project
+
+### Install dependencies
+### `npm install`
+
+### Run
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -28,43 +65,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
