@@ -1,0 +1,111 @@
+// SCSS is full of advanced features it offers variables, you can shorten your code by using the created variables and support all css features.
+
+$primaryColor: #333333;
+$secondaryColor: #ababab;
+main{
+  .main--jokecards__wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-flow: column nowrap;
+    flex-direction: column-reverse;
+
+
+    .main-jokecard {
+      padding: 40px;
+      background: #f8f8f8;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-flow: column nowrap;
+
+      @media screen and (max-width: 575px) {
+        padding: 20px;
+      }
+
+      .main-jokecard-like {
+        margin-left: auto;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .main-jokecard-body {
+        display: flex;
+        flex-flow: row nowrap;
+        margin-top: 10px;
+
+        .main-jokecard-body-icon {
+          margin-right: 20px;
+        }
+
+        .main-jokecard-body-content {
+          flex: 1;
+          display: flex;
+          flex-flow: column nowrap;
+
+          .main-jokecard-body-content-id {
+            margin-bottom: 5px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 14px;
+            color: $secondaryColor;
+
+            a {
+              color: #8ea7ff;
+            }
+          }
+
+          .main-jokecard-body-content-text {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 26px;
+            margin-bottom: 23px;
+
+            @media screen and (max-width: 575px) {
+              margin-bottom: 28px;
+            }
+          }
+
+          .main-jokecard-body-content-info {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+
+            @media screen and (max-width: 575px) {
+              flex-flow: column nowrap;
+              align-items: flex-start;
+            }
+
+            .main-jokecard-body-content-info-update {
+              font-style: normal;
+              font-weight: normal;
+              font-size: 10px;
+              line-height: 14px;
+              color: $secondaryColor;
+            }
+
+            .main-jokecard-body-content-info-category {
+              margin-left: auto;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 10px;
+              line-height: 14px;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              background: #ffffff;
+              border-radius: 6px;
+              padding: 6px 20px;
+
+              @media screen and (max-width: 575px) {
+                margin-top: 10px;
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
