@@ -2,7 +2,7 @@
 
 $primaryColor: #333333;
 $secondaryColor: #ababab;
-main{
+main {
   .main--jokecards__wrapper {
     margin-top: 40px;
     display: flex;
@@ -24,6 +24,7 @@ main{
 
       .main-jokecard-like {
         margin-left: auto;
+
         &:hover {
           cursor: pointer;
         }

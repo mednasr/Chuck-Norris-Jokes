@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 
 import JokeCard from "../JokeCard";
 import './Favorites.scss'
-import { useDispatch, useSelector } from "react-redux";
-import { removeFavorite } from "../../store/Favorites/favoritesAction";
+import {useDispatch, useSelector} from "react-redux";
+import {removeFavorite} from "../../store/Favorites/favoritesAction";
 import {useNavigate} from "react-router-dom";
 import {catchTheJokesError} from "../../store/Jokes/jokesAction";
 import {fetchJokes} from "../../utils/fetchJokes";
@@ -12,7 +12,7 @@ import {fetchJokes} from "../../utils/fetchJokes";
 
 const selectFavorites = (state) => state.favorites;
 
-export default function Favorites({ isFavoritesShow, setIsFavoritesShow }) {
+export default function Favorites({isFavoritesShow, setIsFavoritesShow}) {
     const favorites = useSelector(selectFavorites);
     const dispatch = useDispatch();
 
@@ -44,7 +44,7 @@ export default function Favorites({ isFavoritesShow, setIsFavoritesShow }) {
     });
     let navigate = useNavigate();
 
-    const routeChange = () =>{
+    const routeChange = () => {
         let path = `/`;
         navigate(path);
     }
@@ -65,8 +65,10 @@ export default function Favorites({ isFavoritesShow, setIsFavoritesShow }) {
         const action = removeFavorite(filteredFavorites);
         dispatch(action);
     }
+
     const selectJokes = (state) => state.jokes;
-    const { receivedJokes, error: jokesError } = useSelector(selectJokes);
+    const {receivedJokes, error: jokesError} = useSelector(selectJokes);
+
 //because if used with useEffect in the main component it will cause rerendering ( needs to be rewritten )
     function handleGetJokes(e) {
         let path = `/`;
@@ -91,6 +93,7 @@ export default function Favorites({ isFavoritesShow, setIsFavoritesShow }) {
         }, 1000);
 
     }
+
     return (
         <div {...favoriteWrapperProps}>
 

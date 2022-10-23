@@ -14,18 +14,18 @@ export default function JokeCard({
                                      jokeItem,
                                      handleChangeFavorite,
                                  }) {
-    const {  id, url, value, updated_at, categories } = jokeItem;
+    const {id, url, value, updated_at, categories} = jokeItem;
     const localeUpdatedAtDate = new Date(updated_at).toLocaleString();
 
     //styles
     const blockClassName = isMain ? "main" : "aside";
 
     //elements
-    const heart = isFavorite ? <FilledHeartSVG /> : <HeartSVG />;
+    const heart = isFavorite ? <FilledHeartSVG/> : <HeartSVG/>;
     const bodyIcon = isMain ? (
-        <MainJokecardBodyIconSVG />
+        <MainJokecardBodyIconSVG/>
     ) : (
-        <FavoriteJokecardBodyIconSVG />
+        <FavoriteJokecardBodyIconSVG/>
     );
 
     const categoriesElements = isMain
@@ -55,9 +55,9 @@ export default function JokeCard({
                 <div className={`${blockClassName}-jokecard-body-content`}>
                     <p className={`${blockClassName}-jokecard-body-content-id`}>
                         ID:&nbsp;
-                        <a href={url}  rel="noreferrer" target="_blank">
+                        <a href={url} rel="noreferrer" target="_blank">
                             {id} &nbsp;
-                            <LinkSVG />
+                            <LinkSVG/>
                         </a>
                     </p>
                     <p className={`${blockClassName}-jokecard-body-content-text`}>

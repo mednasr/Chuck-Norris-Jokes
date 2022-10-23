@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
-import { catchTheJokesError } from "../../store/Jokes/jokesAction";
-import { addFavorite, removeFavorite } from "../../store/Favorites/favoritesAction";
-import { fetchJokes } from "../../utils/fetchJokes";
+import {catchTheJokesError} from "../../store/Jokes/jokesAction";
+import {addFavorite, removeFavorite} from "../../store/Favorites/favoritesAction";
+import {fetchJokes} from "../../utils/fetchJokes";
 
 import Navigation from "../../components/Navigation";
 import JokeCard from "../../components/JokeCard";
@@ -17,15 +17,13 @@ const selectFavorites = (state) => state.favorites;
 
 export default function MainComponent() {
     const [listJokes, setListJokes] = useState([])
-    const { receivedJokes, error: jokesError } = useSelector(selectJokes);
+    const {receivedJokes, error: jokesError} = useSelector(selectJokes);
     // console.log("receivedJokes ===>", receivedJokes);
 
     const favorites = useSelector(selectFavorites);
     // console.log("favoritesReducer ===>", favoritesReducer);
 
     const dispatch = useDispatch();
-
-
 
 
     useEffect(() => {
@@ -40,7 +38,6 @@ export default function MainComponent() {
         }
 
     }, [JSON.stringify(receivedJokes)])
-
 
 
     const jokeCards = listJokes.map((joke) => {
@@ -71,7 +68,7 @@ export default function MainComponent() {
             const action = removeFavorite(filteredFavorites);
             dispatch(action);
         } else {
-            const action = addFavorite({ ...jokeItem });
+            const action = addFavorite({...jokeItem});
             dispatch(action);
         }
     }
@@ -117,6 +114,7 @@ export default function MainComponent() {
         ).length;
         return isFavorite;
     }
+
     //didin't use useEffect to prevent any rerendering
     window.onload = handleGetJoke;
 
@@ -125,7 +123,7 @@ export default function MainComponent() {
             <div className="main--heading">
                 <h2>Print 10 random Jokes:</h2>
             </div>
-            <Navigation handleGetJoke={handleGetJoke} handleNewJoke={handleNewJoke} />
+            <Navigation handleGetJoke={handleGetJoke} handleNewJoke={handleNewJoke}/>
             <div className="main--jokecards__wrapper">
                 {jokeCards}
             </div>
